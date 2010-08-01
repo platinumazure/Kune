@@ -1,0 +1,24 @@
+Project Title: Kune
+Maintainer: Kevin Partington (PlatinumAzure)
+License: zlib/png
+
+Description
+--------------------------------------------------
+From the Esperanto for "together", Kune is a highly decentralized collaborative audio development and editing program. Borrowing a few techniques from source control and wikis, people will be allowed to openly collaborate on audio work like never before.
+
+Written in C++ using the Simple and Fast Multimedia Library (SFML).
+
+Technical Requirements
+--------------------------------------------------
+Requires SFML 1.6 or greater.
+
+Installation Instructions
+--------------------------------------------------
+On Linux, just run "make" to compile.
+
+Changelog
+--------------------------------------------------
+
+2010-08-01:
+
+Initial commit.
