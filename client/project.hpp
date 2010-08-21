@@ -10,52 +10,56 @@
 #include <string>
 #include <vector>
 
-class Track;
-
-/*Kune project class:
-- Has many Kune tracks
-- Has name
-- Has original creator
-- Has creation date/time
-- Has some sort of forking history?
-- Has project folder
-*/
-
-class ProjectInfo
+namespace Kune
 {
-	public:
+	class Track;
 
-	const std::string name;
-	const std::string creator;
-	const time_t creation_time;
+	/*Kune project class:
+	- Has many Kune tracks
+	- Has name
+	- Has original creator
+	- Has creation date/time
+	- Has some sort of forking history?
+	- Has project folder
+	*/
 
-	ProjectInfo(std::string n, std::string c, time_t t)
-	: name(n), creator(c), creation_time(t)
-	{}
+	class ProjectInfo
+	{
+		public:
 
-};
+		const std::string name;
+		const std::string creator;
+		const time_t creation_time;
 
-class Project
-{
-	private:
+		ProjectInfo(std::string n, std::string c, time_t t)
+		: name(n), creator(c), creation_time(t)
+		{}
 
-	const ProjectInfo project_info;
-	//std::vector<Track &> tracks;
+	};
 
-	const ProjectInfo *parent_info;
+	class Project
+	{
+		private:
 
-	std::string file_location;
+		const ProjectInfo project_info;
+		//std::vector<Track &> tracks;
 
-	public:
+		const ProjectInfo *parent_info;
 
-	Project(
-		std::string	_name,
-		std::string	_creator,
-		time_t		_time,
-		std::string	_file_location,
-		ProjectInfo *	_parent
-	);
-	
-};
+		std::string file_location;
+
+		public:
+
+		Project(
+			std::string	_name,
+			std::string	_creator,
+			time_t		_time,
+			std::string	_file_location,
+			ProjectInfo *	_parent
+		);
+		
+	};
+
+}
 
 #endif

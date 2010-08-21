@@ -11,7 +11,7 @@
 
 int main (int argc, char **argv)
 {
-	Kune kune;
+	Kune::Manager kune;
 	kune.run();
 
 	return EXIT_SUCCESS;
