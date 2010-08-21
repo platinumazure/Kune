@@ -19,6 +19,12 @@ On Linux, just run "make" to compile.
 Changelog
 --------------------------------------------------
 
+2010-08-21:
+
+Laid out a lot of (bare-bones) infrastructure for Kune project and track
+classes. Obviously all of that needs to be fleshed out at some point :-)
+-PlatinumAzure
+
 2010-08-01:
 
 Initial commit.
