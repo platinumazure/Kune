@@ -1,7 +1,7 @@
 # Makefile for project "Kune"
 
-CFILES=kune.cpp project.cpp
-HFILES=kune.hpp project.hpp
+CFILES=kune.cpp project.cpp track.cpp
+HFILES=kune.hpp project.hpp track.hpp
 LINKED=-lsfml-system -lsfml-graphics -lsfml-window
 
 all: kune

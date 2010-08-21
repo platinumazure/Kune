@@ -1,6 +1,6 @@
 /**
  * project.hpp
- * 
+ * Header file for Kune audio projects.
  **/
 
 #ifndef PROJECT_H
@@ -10,10 +10,10 @@
 #include <string>
 #include <vector>
 
+#include "track.hpp"
+
 namespace Kune
 {
-	class Track;
-
 	/*Kune project class:
 	- Has many Kune tracks
 	- Has name
@@ -42,7 +42,7 @@ namespace Kune
 		private:
 
 		const ProjectInfo project_info;
-		//std::vector<Track &> tracks;
+		std::vector<Track> tracks;
 
 		const ProjectInfo *parent_info;
 
