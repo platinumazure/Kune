@@ -11,7 +11,11 @@ namespace Kune
 {
 	Track::Track(std::string _name, std::string _filename)
 	:
-	  name(_name),
-	  filename(_filename)
+	  trackInfo(_name, _filename)
 	{}
+
+	std::string Track::fileName()
+	{
+		return trackInfo.fileName();
+	}
 }

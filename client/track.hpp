@@ -16,7 +16,7 @@ namespace Kune
 	- Has contributor?
 	*/
 
-	class Track
+	class TrackInfo
 	{
 		private:
 
@@ -25,8 +25,28 @@ namespace Kune
 
 		public:
 
+		TrackInfo(std::string _name, std::string _filename)
+		:
+		  name(_name),
+		  filename(_filename)
+		{}
+
+		std::string &fileName() { return filename; }
+		std::string &trackName() { return name; }
+
+	};
+
+	class Track
+	{
+		public:
+		
 		Track(std::string _name, std::string _filename);
 
+		std::string fileName();
+
+		private:
+
+		TrackInfo trackInfo;
 	};
 
 }
