@@ -18,4 +18,9 @@ namespace Kune
 	{
 		return trackInfo.fileName();
 	}
+
+	std::string Track::trackName()
+	{
+		return trackInfo.trackName();
+	}
 }

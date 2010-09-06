@@ -43,6 +43,7 @@ namespace Kune
 		Track(std::string _name, std::string _filename);
 
 		std::string fileName();
+		std::string trackName();
 
 		private:
 
