@@ -4,9 +4,12 @@
  * Kune application.
  **/
 
+#include <iostream>
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 
 #include "kune.hpp"
+#include "track.hpp"
 
 namespace Kune
 {
@@ -19,8 +22,16 @@ namespace Kune
 
 	void Manager::run()
 	{
+		Track track("Awesome", "res/blah.flac");
+
 		while (window.IsOpened())
 		{
+			if (!track.initialized() && !track.open())
+			{
+				std::cerr << "Could not open track." << std::endl;
+				exit(1);
+			}
+
 			while (window.GetEvent(event))
 			{
 				handleEvent(event, window);

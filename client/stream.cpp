@@ -16,38 +16,6 @@ namespace Kune
 		myOffset(0)
 	{}
 
-	bool Stream::openTrack(Track &track)
-	{
-		sf::SoundBuffer soundData;
-		std::string filename = track.fileName();
-
-		if (soundData.LoadFromFile(filename))
-		{
-			Initialize(
-				soundData.GetChannelsCount(),
-				soundData.GetSampleRate()
-			);
-
-			const sf::Int16 *data = soundData.GetSamples();
-			mySamples.assign(
-				data, 
-				data + soundData.GetSamplesCount()
-			);
-
-			return true;
-		}
-
-		return false;
-	}
-
-	bool Stream::writeTrack(Track &track)
-	{
-		std::string trackname = track.trackName();
-		std::string filename = track.fileName();
-
-		track = Track(trackname, filename);
-	}
-
 	bool Stream::OnStart()
 	{
 		myOffset = 0;
