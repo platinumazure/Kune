@@ -17,8 +17,8 @@ namespace Kune
 		ProjectInfo *	_parent)
 	:
 		project_info(_name, _creator, _time),
-		file_location(_file_location),
-		parent_info(_parent)
+		parent_info(_parent),
+		file_location(_file_location)
 	{}
 
 }

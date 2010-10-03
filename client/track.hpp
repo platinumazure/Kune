@@ -9,6 +9,8 @@
 #include <string>
 #include <SFML/Audio.hpp>
 
+#include "resource.hpp"
+
 namespace Kune
 {
 	/*Kune track class:
@@ -28,8 +30,8 @@ namespace Kune
 
 		TrackInfo(std::string _name, std::string _filename)
 		:
-		  name(_name),
-		  filename(_filename)
+		  filename(_filename),
+		  name(_name)
 		{}
 
 		const std::string &fileName() const { return filename; }
@@ -37,7 +39,7 @@ namespace Kune
 
 	};
 
-	class Track
+	class Track : public Resource
 	{
 		public:
 		
@@ -46,18 +48,23 @@ namespace Kune
 
 		std::string fileName() const;
 		std::string trackName() const;
-		bool initialized() const;
 
 		bool open();
 		bool write();
 		bool replaceSoundData(sf::SoundBuffer &newData);
+
+		bool play();
 
 		private:
 
 		TrackInfo trackInfo;
 
 		sf::SoundBuffer soundData;
-		bool init;
+		sf::Sound sound;
+
+		protected:
+		virtual void loadResource();
+		virtual void useResource();
 	};
 
 }

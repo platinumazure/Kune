@@ -3,7 +3,9 @@
  * Implementation of Kune audio tracks.
  **/
 
+#include <iostream>
 #include <string>
+#include <SFML/Audio.hpp>
 
 #include "track.hpp"
 
@@ -11,14 +13,12 @@ namespace Kune
 {
 	Track::Track(std::string _name, std::string _filename)
 	:
-		trackInfo(_name, _filename),
-		init(false)
+		trackInfo(_name, _filename)
 	{}
 
 	Track::Track(Track &track)
 	:
 		trackInfo(track.trackInfo),
-		init(track.init),
 		soundData(track.soundData)
 	{}
 
@@ -32,16 +32,11 @@ namespace Kune
 		return trackInfo.trackName();
 	}
 
-	bool Track::initialized() const
-	{
-		return init;
-	}
-
 	bool Track::open()
 	{
-		if (init) return true;
+		if (this->initialized()) return true;
 
-		init = true;
+		this->initialize(true);
 
 		std::string file_name = this->fileName();
 		return soundData.LoadFromFile(file_name);
@@ -57,6 +52,28 @@ namespace Kune
 	{
 		soundData = newBuffer;
 		return true;
+	}
+
+	bool Track::play()
+	{
+		if (!this->initialized()) return false;
+
+		this->sound.SetBuffer(this->soundData);
+		sound.Play();
+
+		sf::Sleep(2.0f);
+		
+		return true;
+	}
+
+	void Track::loadResource()
+	{
+		this->open();
+	}
+
+	void Track::useResource()
+	{
+		this->play();
 	}
 
 }

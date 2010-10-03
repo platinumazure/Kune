@@ -6,17 +6,34 @@
 #ifndef RESOURCE_LOADER_H
 #define RESOURCE_LOADER_H
 
+#include <iostream>
+#include <SFML/Audio.hpp>
 #include <SFML/System.hpp>
+
+#include "resource.hpp"
+#include "track.hpp"
 
 namespace Kune
 {
+	class Resource;
+
+	typedef enum {
+		SOUND_BUFFER,
+
+	} ResourceType;
+
+
 	class ResourceLoader : private sf::Thread
 	{
 		private:
-		int x;
+		sf::Mutex mutex;
+		Resource *resource;
+
+		virtual void Run();
 
 		public:
-		ResourceLoader(int _x);
+		ResourceLoader(Resource *resource);
+
 	};
 }
 

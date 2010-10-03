@@ -9,6 +9,7 @@
 #include <SFML/Audio.hpp>
 
 #include "kune.hpp"
+#include "resourceLoader.hpp"
 #include "track.hpp"
 
 namespace Kune
@@ -24,14 +25,10 @@ namespace Kune
 	{
 		Track track("Awesome", "res/blah.flac");
 
+		ResourceLoader loader(&track);
+
 		while (window.IsOpened())
 		{
-			if (!track.initialized() && !track.open())
-			{
-				std::cerr << "Could not open track." << std::endl;
-				exit(1);
-			}
-
 			while (window.GetEvent(event))
 			{
 				handleEvent(event, window);

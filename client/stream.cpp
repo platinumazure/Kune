@@ -12,8 +12,8 @@
 namespace Kune
 {
 	Stream::Stream(std::size_t bufferSize)
-	:	myBufferSize(bufferSize),
-		myOffset(0)
+	:	myOffset(0),
+		myBufferSize(bufferSize)
 	{}
 
 	bool Stream::OnStart()
