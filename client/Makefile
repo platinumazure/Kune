@@ -1,4 +1,4 @@
-# Makefile for project "Kune"
+# Makefile for project "Kune", client section
 
 CFILES=kune.cpp project.cpp track.cpp stream.cpp resourceLoader.cpp
 HFILES=kune.hpp project.hpp track.hpp stream.hpp resourceLoader.hpp resource.hpp
