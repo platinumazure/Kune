@@ -19,6 +19,15 @@ On Linux, just run "make" to compile.
 Changelog
 --------------------------------------------------
 
+2010-10-03:
+
+Been making a number of infrastructure changes on and off. Biggest change is
+the implementation of asynchronous resource loading and consumption, especially
+for audio tracks. My next major goal is to figure out how to play multiple
+tracks at once, in sync with each other, and then to load these asynchronously
+as well.
+-PlatinumAzure
+
 2010-08-21:
 
 Laid out a lot of (bare-bones) infrastructure for Kune project and track
